@@ -67,21 +67,21 @@ class MaterialSelectorOrchestrator:
             "cost_analysis": cost_analysis,
             "durability": durability_analysis,
             "recommendation": self._generate_recommendation(
-                all_materials, carbon_analysis, cost_analysis, durability_analysis
+                all_materials, carbon_analysis, cost_analysis, durability_analysis, city, country
             )
         }
         
         return report
 
-    def _generate_recommendation(self, all_materials, carbon, cost, durability):
+    def _generate_recommendation(self, availability, carbon, cost, durability, city, country):
         """Use LLM to select the best material based on all analyses"""
         
         prompt = f"""
         You are a construction material selection expert.
 
-        Based on the following analyses for materials in {all_materials[0].get('location', 'the area')}:
+        Based on the following analyses for materials in {city}, {country}:
 
-        Available materials: {', '.join([m['name'] for m in all_materials])}
+        Available materials: {', '.join(availability)}
 
         Carbon Impact Analysis: {json.dumps(carbon, indent=2)}
 
