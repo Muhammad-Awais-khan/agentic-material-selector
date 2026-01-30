@@ -20,6 +20,14 @@ The system consists of:
 - **Durability Agent**: Assesses lifespan and maintenance requirements
 - **Orchestrator**: Coordinates all agents and makes final LLM-based selections
 
+## 👥 Team & Roles
+
+**Project Lead & Architect**  
+- **[Hammad Ul Haq](https://github.com/Hammad81314)**
+
+**Core Contributor / Co-Developer**  
+- **Muhammad Awais** – Development, Testing, Documentation
+
 ## 🚀 Installation
 
 1. Clone the repository:
